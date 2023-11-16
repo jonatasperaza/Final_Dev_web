@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Loja_Dev_Web (Backup 1700074005922)</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&amp;display=swap">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark py-lg-4 navbar-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand text-uppercase d-lg-none text-expanded" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="principal">
+        <div id="itens">
+            <div class="item">
+                <img src="assets/img/capuccino.png"
+                    width="100%" alt="">
+                <h3>Capuccino</h3>
+                <button onclick="adicionarItem(1, 'Capuccino', 10.39, 'assets/img/capuccino.png')">comprar</button>
+                <p>Preço: R$10.39</p>
+            </div>
+            <div class="item">
+                <img src="assets/img/expresso.webp"
+                    width="100%" alt="">
+                <h3>Expresso</h3>
+                <button onclick="adicionarItem(2, 'Expresso', 5.90 , 'assets/img/expresso.webp')">comprar</button>
+                <p>Preço: R$10.39</p>
+            </div>
+            
+
+        </div>
+    </div>
+    </main>
+    <div id="teste">
+        <h2>
+            My ShopCart
+        </h2>
+        <p id="vazio">Carrinho Vazio</p>
+        <button id="limpar" onclick="limparCarrinho()">
+            Limpar Carrinho
+        </button>
+    </div>
+    <br><br><br>
+
+    <div class="adicionado">
+        Item adicionado ao carrinho
+    </div>
+    <br>
+    <br>
+    <br>
+    <footer class="text-center footer text-faded py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright&nbsp;©&nbsp;Brand 2023</p>
+        </div>
+    </footer>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/current-day.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    width: 100%;
+    color: white;
+    background-color: crimson;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#itens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+}
+
+.item {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+img {
+    margin: auto;
+}
+
+#teste {
+    position: absolute;
+    top: 180px;
+    right: 0;
+    margin-right: 30px;
+    width: 220px;
+    text-align: center;
+    background-color: rgb(151, 45, 66);
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#principal {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+button#limpar {
+    margin: auto;
+}
+
+button {
+    border: 0;
+    padding: 5px;
+    background-color: crimson;
+    border-radius: 15px;
+    color: white;
+}
+
+.adicionado{
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    margin-left: 15px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    top: 65px;
+    position: fixed;
+}
+
+
+@keyframes opacidade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #itens {
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+    }
+
+    #principal {
+        grid-template-columns: 1fr;
+    }
+    
+    #teste{
+        position: relative;
+        margin: auto;
+    }
+
+    button{
+        padding: 10px
+    }
+}
