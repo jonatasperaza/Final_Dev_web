@@ -1,13 +1,22 @@
 let carrinho3 = document.getElementById("teste");
-let total = 0
 let vazio = document.getElementById("vazio");
 let adicionado = document.getElementsByClassName("adicionado")[0];
-
-
-function adddb(id, nome, preco, foto){
-    localStorage.setItem()
+if(!localStorage.getItem("total")){
+    let total = Number(0);
+    localStorage.setItem("total", total)
+}
+else{
+    let total = localStorage.getItem("total")
 }
 
+// Recupera os itens do carrinho do localStorage ao carregar a página
+document.addEventListener("DOMContentLoaded", function () {
+    const carrinhoSalvo = localStorage.getItem("carrinho");
+    if (carrinhoSalvo) {
+        carrinho3.innerHTML = carrinhoSalvo;
+        atualizarTotal();
+    }
+});
 
 function limparCarrinho() {
     carrinho3.innerHTML = "";
@@ -15,11 +24,16 @@ function limparCarrinho() {
     carrinho3.innerHTML += "<h2>My ShopCart</h2>";
     carrinho3.innerHTML += "<p id='vazio'>Carrinho Vazio</p>";
     carrinho3.innerHTML += " <button id='limpar' onclick='limparCarrinho()'>Limpar Carrinho</button>";
-    total = 0;
+    total = Number(0);
+    localStorage.setItem("total", Number(total))
+
+    // Limpa os itens do carrinho no localStorage
+    localStorage.removeItem("carrinho");
 }
 
 function adicionarItem(id, nome, preco, foto) {
     total += preco
+    localStorage.setItem("total", Number(total))
     adicionado.style.animation = "opacidade 4s forwards";
     vazio.style.display = "none";
     let tenis = document.createElement("div");
@@ -40,10 +54,16 @@ function adicionarItem(id, nome, preco, foto) {
         
         <br>`;
 
-        setTimeout(function() {
-             adicionado.style.animation = "";
-          }, 3000);
-          
-
     carrinho3.appendChild(tenis);
+
+    // Atualiza o localStorage com os itens do carrinho
+    localStorage.setItem("carrinho", carrinho3.innerHTML);
+}
+
+// Função para atualizar o total no carrinho
+function atualizarTotal() {
+    const totalElement = carrinho3.querySelector(".total");
+    if (totalElement) {
+        totalElement.innerHTML = `<strong>Total R$ ${total}</strong>`;
+    }
 }
