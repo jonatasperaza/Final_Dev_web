@@ -1,15 +1,16 @@
 let carrinho3 = document.getElementById("teste");
 let vazio = document.getElementById("vazio");
 let adicionado = document.getElementsByClassName("adicionado")[0];
+let total;
 if(!localStorage.getItem("total")){
-    let total = Number(0);
+    total = Number();
     localStorage.setItem("total", total)
+
 }
 else{
-    let total = localStorage.getItem("total")
+    total = Number(localStorage.getItem("total"))
 }
 
-// Recupera os itens do carrinho do localStorage ao carregar a página
 document.addEventListener("DOMContentLoaded", function () {
     const carrinhoSalvo = localStorage.getItem("carrinho");
     if (carrinhoSalvo) {
@@ -25,9 +26,7 @@ function limparCarrinho() {
     carrinho3.innerHTML += "<p id='vazio'>Carrinho Vazio</p>";
     carrinho3.innerHTML += " <button id='limpar' onclick='limparCarrinho()'>Limpar Carrinho</button>";
     total = Number(0);
-    localStorage.setItem("total", Number(total))
-
-    // Limpa os itens do carrinho no localStorage
+    localStorage.setItem("total", Number(total));
     localStorage.removeItem("carrinho");
 }
 
