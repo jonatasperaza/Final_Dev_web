@@ -23,7 +23,6 @@ function limparCarrinho() {
     carrinho3.innerHTML = "";
     vazio.style.display = "block";
     carrinho3.innerHTML += "<h2>My ShopCart</h2>";
-    carrinho3.innerHTML += "<p id='vazio'>Carrinho Vazio</p>";
     carrinho3.innerHTML += " <button id='limpar' onclick='limparCarrinho()'>Limpar Carrinho</button>";
     total = Number(0);
     localStorage.setItem("total", Number(total));
