@@ -60,7 +60,7 @@ button#limpar {
     margin: auto;
 }
 
-button {
+#principal button, #limpar {    
     border: 0;
     padding: 5px;
     background-color: crimson;
